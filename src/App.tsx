@@ -1,5 +1,6 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
+import { Button } from "@/components/ui/button"
 import "./App.css";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           placeholder="Enter a name..."
         />
         <button type="submit">Greet</button>
+        <Button>Shadcn Ui</Button>
       </form>
 
       <p>{greetMsg}</p>
