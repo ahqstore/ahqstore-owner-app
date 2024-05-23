@@ -7,26 +7,34 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
+    "targets": ["nsis", "deb", "updater"],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "publisher": "AHQ Softwares & Contributors"
   },
-  "productName": "ahqstore-owner",
-  "version": "0.0.0",
-  "identifier": "com.tauri.dev",
-  "plugins": {},
+  "productName": "AHQ Store Owners' Application",
+  "version": "../package.json",
+  "identifier": "com.ahqstore.owners",
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDFBMDdERjE2RjNBNjBDRjIKUldUeURLYnpGdDhIR3JaTnNxZEhxNzUvVU93dDVqTmlWWE5zQ3BxcFNzd1BqZWVXT0JVc0U2VDUK",
+      "endpoints": [
+        "https://github.com/ahqstore/ahqstore-owner-app/releases/latest/download/latest.json"
+      ]
+    }
+  },
   "app": {
     "security": {
       "csp": null
     },
     "windows": [
       {
-        "title": "ahqstore-owner",
+        "title": "AHQ Store Owners",
         "width": 800,
         "height": 600
       }

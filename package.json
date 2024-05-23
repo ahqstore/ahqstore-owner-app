@@ -10,6 +10,7 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@tauri-apps/plugin-updater": "2.0.0-beta.3",
     "babel-plugin-react-compiler": "0.0.0-experimental-592953e-20240517",
     "eslint-plugin-react-compiler": "0.0.0-experimental-c8b3f72-20240517"
   },
