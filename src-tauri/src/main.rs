@@ -1,15 +1,23 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
-}
+use tauri_plugin_updater::UpdaterExt;
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        .plugin(tauri_plugin_updater::Builder::new().build())
+        .setup(|app| {
+            let builder = app.handle().updater_builder().build();
+
+            tauri::async_runtime::spawn(async move {
+                if let Ok(x) = builder {
+                    if let Ok(Some(update)) = x.check().await {
+                        update.download_and_install(|_,_|{}, ||{}).await.unwrap();
+                    }
+                }
+            });
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

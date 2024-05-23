@@ -1,4 +1,5 @@
 {
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
     "beforeDevCommand": "pnpm dev",
     "beforeBuildCommand": "pnpm build",
@@ -7,28 +8,38 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
+    "targets": ["deb", "rpm", "msi", "appimage", "updater"],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "publisher": "AHQ Store Contributors"
   },
-  "productName": "ahqstore-owner",
-  "version": "0.0.0",
-  "identifier": "com.tauri.dev",
-  "plugins": {},
+  "productName": "AHQ Store Owners",
+  "version": "../package.json",
+  "identifier": "com.ahqstore.owners",
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDFBMDdERjE2RjNBNjBDRjIKUldUeURLYnpGdDhIR3JaTnNxZEhxNzUvVU93dDVqTmlWWE5zQ3BxcFNzd1BqZWVXT0JVc0U2VDUK",
+      "endpoints": [
+        "https://github.com/ahqstore/ahqstore-owner-app/releases/latest/download/latest.json"
+      ]
+    }
+  },
   "app": {
     "security": {
       "csp": null
     },
     "windows": [
       {
-        "title": "ahqstore-owner",
-        "width": 800,
-        "height": 600
+        "title": "AHQ Store Owners",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 1200,
+        "minHeight": 800
       }
     ]
   }
