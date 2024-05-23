@@ -5,6 +5,8 @@ on:
     tags:
       - "v*"
 
+permissions: write-all
+
 jobs:
   publish-tauri:
     permissions:
@@ -60,4 +62,4 @@ jobs:
           releaseBody: "See the assets to download this version and install."
           releaseDraft: false
           prerelease: false
-          args: ${{ matrix.settings.args }}
+          args: -v
