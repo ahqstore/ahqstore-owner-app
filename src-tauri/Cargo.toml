@@ -1,6 +1,6 @@
 [package]
 name = "ahqstore-owner"
-version = "0.0.0"
+version = "0.0.1"
 description = "AHQ Store Owners' Application"
 authors = ["AHQ", "Kenta"]
 edition = "2021"

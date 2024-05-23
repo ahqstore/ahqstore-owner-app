@@ -8,7 +8,7 @@
   },
   "bundle": {
     "active": true,
-    "targets": ["nsis", "deb", "updater"],
+    "targets": ["deb", "rpm", "msi", "appimage", "updater"],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
@@ -18,7 +18,7 @@
     ],
     "publisher": "AHQ Softwares & Contributors"
   },
-  "productName": "AHQ Store Owners' Application",
+  "productName": "AHQ Store Owners",
   "version": "../package.json",
   "identifier": "com.ahqstore.owners",
   "plugins": {
