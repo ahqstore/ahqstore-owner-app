@@ -1,0 +1,5 @@
+[target.'cfg(windows)']
+rustflags = ["-Z", "threads=2"]
+
+[target.'cfg(unix)']
+rustflags = ["-Z", "threads=2"]
